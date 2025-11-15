@@ -1,8 +1,19 @@
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { PrimaryButton } from "@/components/PrimaryButton";
 
 const OnboardingWelcome = () => {
   const navigate = useNavigate();
+  const [quoteIndex, setQuoteIndex] = useState(0);
+
+  const motivationalQuotes = [
+    "Day 1 starts when you do.",
+    "Future you is watching.",
+    "No cap, no excuses, just reps.",
+    "Show up now, scroll later.",
+    "You don't need motivation, you need receipts.",
+    "If you went, you get the receipt.",
+  ];
 
   const gymImages = [
     "/images/gym-1.jpg",
@@ -18,6 +29,14 @@ const OnboardingWelcome = () => {
     "/images/gym-11.jpg",
     "/images/gym-12.jpg",
   ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setQuoteIndex((prev) => (prev + 1) % motivationalQuotes.length);
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-black">
@@ -39,12 +58,6 @@ const OnboardingWelcome = () => {
 
       {/* Foreground Content */}
       <div className="relative z-10 min-h-screen flex flex-col px-5 pb-8 pt-10">
-        {/* Step Indicator */}
-        <div className="absolute top-6 right-5">
-          <span className="text-xs text-gray-400 bg-white/5 px-3 py-1 rounded-full">
-            Step 1 of 3
-          </span>
-        </div>
         {/* Header - Dark Mode */}
         <div className="w-full flex flex-col gap-1 mb-6 items-center text-center">
           <h1 className="text-xl font-semibold text-white">SpotMe</h1>
@@ -65,10 +78,17 @@ const OnboardingWelcome = () => {
                 Your streak starts today
               </span>
             </div>
-            <p className="text-xs text-gray-300 mt-2">
-              Day 1 starts when you do.
-            </p>
           </div>
+        </div>
+
+        {/* Rotating Motivational Quote */}
+        <div className="absolute left-5 bottom-32 max-w-xs">
+          <p
+            key={quoteIndex}
+            className="text-sm text-gray-200/85 italic animate-fade-in"
+          >
+            "{motivationalQuotes[quoteIndex]}"
+          </p>
         </div>
 
         {/* Bottom Actions */}

@@ -40,13 +40,6 @@ const OnboardingDetails = () => {
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col px-5 pb-8 pt-10">
-      {/* Step Indicator */}
-      <div className="absolute top-6 right-5">
-        <span className="text-xs text-gray-400 bg-white/5 px-3 py-1 rounded-full">
-          Step 2 of 3
-        </span>
-      </div>
-
       <Header 
         align="left"
         title="Let's set you up" 
