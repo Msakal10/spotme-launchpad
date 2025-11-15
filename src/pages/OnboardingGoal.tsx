@@ -71,13 +71,6 @@ const OnboardingGoal = () => {
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col px-5 pb-8 pt-10">
-      {/* Step Indicator */}
-      <div className="absolute top-6 right-5">
-        <span className="text-xs text-gray-400 bg-white/5 px-3 py-1 rounded-full">
-          Step 3 of 3
-        </span>
-      </div>
-
       <Header 
         align="left"
         title="Dial in your routine" 
@@ -96,9 +89,6 @@ const OnboardingGoal = () => {
             <h3 className="mt-2 text-lg font-semibold text-white">
               How many days per week do you want to hit the gym?
             </h3>
-            <p className="text-xs text-gray-400 mt-1">
-              Not ideal you. Real you.
-            </p>
             <GoalSelector value={gymGoalPerWeek} onChange={setGymGoalPerWeek} />
           </div>
 
@@ -110,9 +100,6 @@ const OnboardingGoal = () => {
             <h3 className="mt-2 text-lg font-semibold text-white">
               When do you usually go to the gym?
             </h3>
-            <p className="text-xs text-gray-400 mt-1">
-              Pick when you actually go, not when you wish you did.
-            </p>
             <div className="flex flex-wrap gap-2 mt-3">
               {timeOptions.map((option) => (
                 <button
@@ -138,9 +125,6 @@ const OnboardingGoal = () => {
             <h3 className="mt-2 text-lg font-semibold text-white">
               What's your main goal right now?
             </h3>
-            <p className="text-xs text-gray-400 mt-1">
-              We won't tell your friends. This is for your nudges.
-            </p>
             <div className="flex flex-wrap gap-2 mt-3">
               {goalOptions.map((option) => (
                 <button
@@ -181,36 +165,6 @@ const OnboardingGoal = () => {
                 </button>
               ))}
             </div>
-            <p className="mt-3 text-xs text-gray-400">
-              This helps us tailor challenges and nudges to your style.
-            </p>
-
-            {/* Dynamic Summary */}
-            {gymGoalPerWeek > 0 && preferredTimeSlot && mainGoal && workoutTypes.length > 0 && (() => {
-              const timeLabelMap: Record<string, string> = {
-                "early-morning": "early-morning",
-                "morning": "morning",
-                "afternoon": "afternoon",
-                "evening": "evening",
-                "varies": "whenever you can",
-              };
-
-              const goalLabelMap: Record<string, string> = {
-                "build-muscle": "build muscle",
-                "lose-fat": "lose fat",
-                "stay-consistent": "stay consistent",
-                "get-stronger": "get stronger",
-                "feel-better": "feel better",
-              };
-
-              const workoutLabel = workoutTypes.join(" + ");
-
-              return (
-                <p className="text-xs text-gray-300 mt-4">
-                  You: {gymGoalPerWeek}-day {timeLabelMap[preferredTimeSlot]} lifter, trying to {goalLabelMap[mainGoal]} with {workoutLabel}.
-                </p>
-              );
-            })()}
           </div>
         </div>
       </div>
