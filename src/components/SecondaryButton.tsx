@@ -10,7 +10,7 @@ export const SecondaryButton = ({ children, onClick, className = "" }: Secondary
   return (
     <button
       onClick={onClick}
-      className={`w-full h-12 rounded-xl bg-white border border-border text-foreground font-medium flex items-center justify-center shadow-sm active:scale-95 transition ${className}`}
+      className={`w-full h-12 rounded-2xl bg-white border border-border text-foreground font-medium flex items-center justify-center shadow-sm active:scale-95 transition ${className}`}
     >
       {children}
     </button>
