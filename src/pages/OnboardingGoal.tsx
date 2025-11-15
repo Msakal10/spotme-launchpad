@@ -56,7 +56,7 @@ const OnboardingGoal = () => {
     localStorage.setItem("spotme_time_slot", preferredTimeSlot);
     localStorage.setItem("spotme_main_goal", mainGoal);
     localStorage.setItem("spotme_workout_types", JSON.stringify(workoutTypes));
-    navigate("/today");
+    navigate("/connect");
   };
 
   const handleSkip = () => {
@@ -64,7 +64,7 @@ const OnboardingGoal = () => {
     localStorage.setItem("spotme_time_slot", "evening");
     localStorage.setItem("spotme_main_goal", "stay-consistent");
     localStorage.setItem("spotme_workout_types", JSON.stringify(["weights"]));
-    navigate("/today");
+    navigate("/connect");
   };
 
   const isValid = gymGoalPerWeek > 0 && preferredTimeSlot && mainGoal && workoutTypes.length > 0;
