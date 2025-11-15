@@ -35,7 +35,8 @@ const OnboardingGoal = () => {
       <Header 
         align="left"
         title="Your weekly goal" 
-        subtitle="How many days a week do you want to hit the gym?" 
+        subtitle="How many days a week do you want to hit the gym?"
+        onBack={() => navigate("/onboarding/details")}
       />
 
       <div className="flex-1 flex flex-col justify-center">
