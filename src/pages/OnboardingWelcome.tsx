@@ -39,6 +39,12 @@ const OnboardingWelcome = () => {
 
       {/* Foreground Content */}
       <div className="relative z-10 min-h-screen flex flex-col px-5 pb-8 pt-10">
+        {/* Step Indicator */}
+        <div className="absolute top-6 right-5">
+          <span className="text-xs text-gray-400 bg-white/5 px-3 py-1 rounded-full">
+            Step 1 of 3
+          </span>
+        </div>
         {/* Header - Dark Mode */}
         <div className="w-full flex flex-col gap-1 mb-6 items-center text-center">
           <h1 className="text-xl font-semibold text-white">SpotMe</h1>
@@ -59,6 +65,9 @@ const OnboardingWelcome = () => {
                 Your streak starts today
               </span>
             </div>
+            <p className="text-xs text-gray-300 mt-2">
+              Day 1 starts when you do.
+            </p>
           </div>
         </div>
 

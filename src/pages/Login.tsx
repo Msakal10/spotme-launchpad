@@ -19,7 +19,7 @@ const Login = () => {
       <Header 
         align="left"
         title="Welcome back" 
-        subtitle="Log in to keep your streak going."
+        subtitle="Log in to keep your receipts."
         onBack={() => navigate("/onboarding")}
       />
 
@@ -60,7 +60,7 @@ const Login = () => {
 
       <div className="space-y-3">
         <PrimaryButton disabled={!isValid} onClick={handleLogin}>
-          Log in
+          Log in & keep my streak
         </PrimaryButton>
         <button
           onClick={() => navigate("/onboarding")}

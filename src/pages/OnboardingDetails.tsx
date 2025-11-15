@@ -40,10 +40,17 @@ const OnboardingDetails = () => {
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col px-5 pb-8 pt-10">
+      {/* Step Indicator */}
+      <div className="absolute top-6 right-5">
+        <span className="text-xs text-gray-400 bg-white/5 px-3 py-1 rounded-full">
+          Step 2 of 3
+        </span>
+      </div>
+
       <Header 
         align="left"
         title="Let's set you up" 
-        subtitle="This is how your friends will see you on SpotMe."
+        subtitle="Drop your @ so your crew knows it's you."
         onBack={() => navigate("/onboarding")}
       />
 
@@ -78,7 +85,7 @@ const OnboardingDetails = () => {
               className="mt-1 w-full rounded-xl border border-white/15 bg-[#050505] px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#5D5FEC] focus:border-transparent"
             />
             <p className="text-xs text-gray-400 mt-1">
-              No spaces. You can change this later.
+              No spaces, no weird symbols. Think @handle, but for the gym.
             </p>
             {usernameError && (
               <p className="text-xs text-red-500 mt-1">{usernameError}</p>
