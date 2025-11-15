@@ -9,14 +9,13 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   const handleLogin = () => {
-    // Placeholder login - just navigate to today
     navigate("/today");
   };
 
   const isValid = username.trim().length > 0 && password.trim().length > 0;
 
   return (
-    <div className="min-h-screen bg-background flex flex-col px-5 pb-8 pt-10">
+    <div className="min-h-screen bg-black text-white flex flex-col px-5 pb-8 pt-10">
       <Header 
         align="left"
         title="Welcome back" 
@@ -25,10 +24,10 @@ const Login = () => {
       />
 
       <div className="flex-1 flex flex-col justify-center gap-6">
-        <div className="bg-white rounded-2xl shadow-sm border border-border p-5 space-y-4">
+        <div className="bg-[#111111] rounded-2xl shadow-sm border border-white/10 p-5 space-y-4">
           {/* Username/Email Field */}
           <div>
-            <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+            <label className="text-xs font-semibold text-gray-400 uppercase tracking-wide">
               Username or Email
             </label>
             <input
@@ -36,13 +35,13 @@ const Login = () => {
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               placeholder="mo_lifts"
-              className="mt-1 w-full rounded-xl border border-border bg-[#F9F9FB] px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+              className="mt-1 w-full rounded-xl border border-white/15 bg-[#050505] px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#5D5FEC] focus:border-transparent"
             />
           </div>
 
           {/* Password Field */}
           <div>
-            <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+            <label className="text-xs font-semibold text-gray-400 uppercase tracking-wide">
               Password
             </label>
             <input
@@ -50,7 +49,7 @@ const Login = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="••••••••"
-              className="mt-1 w-full rounded-xl border border-border bg-[#F9F9FB] px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+              className="mt-1 w-full rounded-xl border border-white/15 bg-[#050505] px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#5D5FEC] focus:border-transparent"
             />
             <p className="text-xs text-gray-400 mt-1">
               Forgot your password?
@@ -65,7 +64,7 @@ const Login = () => {
         </PrimaryButton>
         <button
           onClick={() => navigate("/onboarding")}
-          className="w-full text-sm text-gray-500 hover:text-foreground transition"
+          className="w-full text-sm text-gray-400 hover:text-white transition text-center"
         >
           New here? Start your streak
         </button>

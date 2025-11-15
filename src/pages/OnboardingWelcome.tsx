@@ -11,13 +11,19 @@ const OnboardingWelcome = () => {
     "/images/gym-4.jpg",
     "/images/gym-5.jpg",
     "/images/gym-6.jpg",
+    "/images/gym-7.jpg",
+    "/images/gym-8.jpg",
+    "/images/gym-9.jpg",
+    "/images/gym-10.jpg",
+    "/images/gym-11.jpg",
+    "/images/gym-12.jpg",
   ];
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-black">
       {/* Background Grid of Gym Photos */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 grid grid-cols-2 grid-rows-3 gap-1 opacity-60">
+        <div className="absolute inset-0 grid grid-cols-3 grid-rows-4 gap-1 opacity-65">
           {gymImages.map((src, idx) => (
             <img
               key={idx}
@@ -36,18 +42,14 @@ const OnboardingWelcome = () => {
         {/* Header - Dark Mode */}
         <div className="w-full flex flex-col gap-1 mb-6 items-center text-center">
           <h1 className="text-xl font-semibold text-white">SpotMe</h1>
-          <p className="text-sm text-gray-300">Your gym accountability crew.</p>
         </div>
 
         {/* Hero Section - Centered */}
         <div className="flex-1 flex flex-col items-center justify-center text-center gap-3">
           <h2 className="text-4xl font-extrabold text-white">
-            SpotMe
+            Show up. Get spotted.
           </h2>
-          <p className="text-base font-semibold text-white">Show up. Get spotted.</p>
-          <p className="text-sm text-gray-300 max-w-xs">
-            Post a gym pic to unlock your crew and keep your streak alive.
-          </p>
+          <p className="text-base font-semibold text-gray-200">The "I went to the gym" receipt.</p>
           
           {/* Dark Mode Streak Badge */}
           <div className="mt-3">
