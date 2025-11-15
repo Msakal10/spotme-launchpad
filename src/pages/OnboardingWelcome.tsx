@@ -5,6 +5,7 @@ import { PrimaryButton } from "@/components/PrimaryButton";
 const OnboardingWelcome = () => {
   const navigate = useNavigate();
   const [quoteIndex, setQuoteIndex] = useState(0);
+  const [positionIndex, setPositionIndex] = useState(0);
 
   const motivationalQuotes = [
     "Day 1 starts when you do.",
@@ -13,6 +14,15 @@ const OnboardingWelcome = () => {
     "Show up now, scroll later.",
     "You don't need motivation, you need receipts.",
     "If you went, you get the receipt.",
+  ];
+
+  const quotePositions = [
+    "left-6 bottom-32",
+    "right-6 bottom-36",
+    "left-6 top-32",
+    "right-8 top-40",
+    "left-10 bottom-52",
+    "right-10 top-24",
   ];
 
   const gymImages = [
@@ -33,7 +43,8 @@ const OnboardingWelcome = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setQuoteIndex((prev) => (prev + 1) % motivationalQuotes.length);
-    }, 2500);
+      setPositionIndex((prev) => (prev + 1) % quotePositions.length);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);
@@ -82,13 +93,11 @@ const OnboardingWelcome = () => {
         </div>
 
         {/* Rotating Motivational Quote */}
-        <div className="absolute left-5 bottom-32 max-w-xs">
-          <p
-            key={quoteIndex}
-            className="text-sm text-gray-200/85 italic animate-fade-in"
-          >
-            "{motivationalQuotes[quoteIndex]}"
-          </p>
+        <div
+          key={quoteIndex}
+          className={`absolute max-w-xs text-sm text-gray-200/85 italic transition-opacity duration-700 ease-out ${quotePositions[positionIndex]}`}
+        >
+          "{motivationalQuotes[quoteIndex]}"
         </div>
 
         {/* Bottom Actions */}
