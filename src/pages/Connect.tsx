@@ -79,7 +79,11 @@ const Connect = () => {
   return (
     <div className="min-h-screen bg-black text-white flex flex-col">
       <div className="px-5 pt-10 pb-28 overflow-y-auto">
-        <Header title="Connect" />
+        <Header 
+          title="Connect" 
+          align="left"
+          onBack={() => navigate(-1)}
+        />
         <p className="mt-2 text-sm text-gray-400">
           Follow creators and friends so your feed isn't empty on Day 1.
         </p>
@@ -102,7 +106,17 @@ const Connect = () => {
                 className="flex items-center justify-between px-4 py-3"
               >
                 <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-neutral-700 overflow-hidden" />
+                  <div className="relative h-10 w-10 rounded-full overflow-hidden bg-neutral-700">
+                    {creator.photo ? (
+                      <img
+                        src={creator.photo}
+                        alt={creator.name}
+                        className="h-full w-full object-cover"
+                      />
+                    ) : (
+                      <div className="h-full w-full bg-gradient-to-br from-neutral-600 to-neutral-800" />
+                    )}
+                  </div>
                   <div>
                     <p className="text-sm font-medium text-gray-100">
                       {creator.name}
@@ -134,7 +148,17 @@ const Connect = () => {
                 className="flex items-center justify-between px-4 py-3"
               >
                 <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-neutral-700 overflow-hidden" />
+                  <div className="relative h-10 w-10 rounded-full overflow-hidden bg-neutral-700">
+                    {friend.photo ? (
+                      <img
+                        src={friend.photo}
+                        alt={friend.name}
+                        className="h-full w-full object-cover"
+                      />
+                    ) : (
+                      <div className="h-full w-full bg-gradient-to-br from-neutral-600 to-neutral-800" />
+                    )}
+                  </div>
                   <div>
                     <p className="text-sm font-medium text-gray-100">
                       {friend.name}
@@ -166,7 +190,17 @@ const Connect = () => {
                 className="flex items-center justify-between px-4 py-3"
               >
                 <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-neutral-700 overflow-hidden" />
+                  <div className="relative h-10 w-10 rounded-full overflow-hidden bg-neutral-700">
+                    {req.photo ? (
+                      <img
+                        src={req.photo}
+                        alt={req.name}
+                        className="h-full w-full object-cover"
+                      />
+                    ) : (
+                      <div className="h-full w-full bg-gradient-to-br from-neutral-600 to-neutral-800" />
+                    )}
+                  </div>
                   <div>
                     <p className="text-sm font-medium text-gray-100">
                       {req.name}
