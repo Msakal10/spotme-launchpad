@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import OnboardingWelcome from "./pages/OnboardingWelcome";
 import OnboardingDetails from "./pages/OnboardingDetails";
 import OnboardingGoal from "./pages/OnboardingGoal";
+import Login from "./pages/Login";
 import Today from "./pages/Today";
 import NotFound from "./pages/NotFound";
 
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/onboarding" element={<OnboardingWelcome />} />
           <Route path="/onboarding/details" element={<OnboardingDetails />} />
           <Route path="/onboarding/goal" element={<OnboardingGoal />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/today" element={<Today />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

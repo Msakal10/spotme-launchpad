@@ -44,7 +44,8 @@ const OnboardingDetails = () => {
       <Header 
         align="left"
         title="Let's set you up" 
-        subtitle="This is how your friends will see you on SpotMe." 
+        subtitle="This is how your friends will see you on SpotMe."
+        onBack={() => navigate("/onboarding")}
       />
 
       <div className="flex-1 flex flex-col justify-center gap-6">
