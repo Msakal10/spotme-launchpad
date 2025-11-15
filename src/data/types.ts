@@ -5,6 +5,9 @@ export type User = {
   gymGoalPerWeek: number;
   streak: number;
   postedToday: boolean;
+  preferredTimeSlot: "early-morning" | "morning" | "afternoon" | "evening" | "varies";
+  mainGoal: "build-muscle" | "lose-fat" | "stay-consistent" | "get-stronger" | "feel-better";
+  workoutTypes: string[];
 };
 
 export type Post = {

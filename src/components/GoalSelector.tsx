@@ -8,17 +8,17 @@ export const GoalSelector = ({ value, onChange }: GoalSelectorProps) => {
 
   return (
     <div className="flex flex-col items-center gap-4 mt-6">
-      <div className="text-5xl font-extrabold text-foreground">{value}</div>
-      <div className="text-sm text-muted-foreground">days per week</div>
+      <div className="text-5xl font-extrabold text-white">{value}</div>
+      <div className="text-sm text-gray-400">days per week</div>
       <div className="flex flex-wrap justify-center gap-2 mt-2">
         {days.map((day) => (
           <button
             key={day}
             onClick={() => onChange(day)}
-            className={`px-4 py-1.5 rounded-full text-sm cursor-pointer transition ${
+            className={`px-4 py-1.5 rounded-full text-sm cursor-pointer transition border ${
               value === day
-                ? "bg-gradient-to-r from-primary to-primary-accent text-white border-transparent"
-                : "bg-white border border-border text-foreground"
+                ? "bg-gradient-to-r from-[#5D5FEC] to-[#8A88FF] text-white border-transparent"
+                : "bg-black/40 border-white/20 text-white"
             }`}
           >
             {day}
