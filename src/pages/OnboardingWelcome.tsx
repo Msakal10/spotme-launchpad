@@ -101,7 +101,7 @@ const OnboardingWelcome = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.9 }}
             transition={{ duration: 0.45, ease: "easeOut" }}
-            className={`absolute max-w-xs text-sm text-gray-200/85 italic pointer-events-none ${quotePositions[positionIndex]}`}
+            className={`absolute max-w-xs text-sm md:text-base text-gray-200/85 italic pointer-events-none ${quotePositions[positionIndex]}`}
           >
             "{motivationalQuotes[quoteIndex]}"
           </motion.p>

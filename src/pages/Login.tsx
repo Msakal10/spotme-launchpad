@@ -9,7 +9,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   const handleLogin = () => {
-    navigate("/today");
+    navigate("/connect");
   };
 
   const isValid = username.trim().length > 0 && password.trim().length > 0;
