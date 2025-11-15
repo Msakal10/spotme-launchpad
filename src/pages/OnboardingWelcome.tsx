@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import { PrimaryButton } from "@/components/PrimaryButton";
 
 const OnboardingWelcome = () => {
@@ -17,12 +18,12 @@ const OnboardingWelcome = () => {
   ];
 
   const quotePositions = [
-    "left-6 bottom-32",
-    "right-6 bottom-36",
-    "left-6 top-32",
-    "right-8 top-40",
-    "left-10 bottom-52",
-    "right-10 top-24",
+    "left-6 top-24",
+    "right-6 top-28",
+    "left-6 top-40",
+    "right-10 top-44",
+    "left-10 top-56",
+    "right-10 top-60",
   ];
 
   const gymImages = [
@@ -93,12 +94,18 @@ const OnboardingWelcome = () => {
         </div>
 
         {/* Rotating Motivational Quote */}
-        <div
-          key={quoteIndex}
-          className={`absolute max-w-xs text-sm text-gray-200/85 italic transition-opacity duration-700 ease-out ${quotePositions[positionIndex]}`}
-        >
-          "{motivationalQuotes[quoteIndex]}"
-        </div>
+        <AnimatePresence mode="wait">
+          <motion.p
+            key={quoteIndex}
+            initial={{ opacity: 0, y: 20, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -20, scale: 0.9 }}
+            transition={{ duration: 0.45, ease: "easeOut" }}
+            className={`absolute max-w-xs text-sm text-gray-200/85 italic pointer-events-none ${quotePositions[positionIndex]}`}
+          >
+            "{motivationalQuotes[quoteIndex]}"
+          </motion.p>
+        </AnimatePresence>
 
         {/* Bottom Actions */}
         <div className="mt-6 space-y-3">
